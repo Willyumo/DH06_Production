@@ -1,0 +1,390 @@
+/* Top Section */
+.top-section {
+    background-color: rgb(255, 174, 0); /* Ensure black background */
+    color: white;
+    text-align: center;
+    min-height: 10vh;
+    padding: 100px 0;
+}
+
+/* Middle Section */
+.middle-section {
+    background-color: black; /* Dark background for the entire portfolio section */
+    padding: 50px 0; /* Add some padding for spacing */
+}
+
+/* Bottom Section */
+.bottom-section {
+    background-color: white; /* Dark background for bottom section */
+    color: orange; /* White text for bottom section */
+    padding: 100px 0; /* Add some padding for spacing */
+    text-align: center;
+    margin: 10px auto 100px; /* Center the image horizontally and adjust vertical spacing */
+    font-size: 3rem;
+}
+
+/* Apply existing styles to the respective sections 
+.scroll-container,
+.fade-in-on-scroll,
+.picture-section img,
+.h1-section,
+.p-section,
+#portfolio {
+    Apply styles as needed 
+} */
+/* Adjust the positioning of elements within each section */
+/* .picture-section img {
+    width: 30%;  Shrink the image to 70% of its container width
+    height: auto;  Maintain aspect ratio 
+    display: block;  Ensure the image is a block-level element 
+    margin: 0 auto;  Center the image horizontally and adjust vertical spacing 
+    margin-bottom: 50px; Adds 20px of spacing below images 
+    transition: opacity 1s ease-in-out;
+} */
+
+.picture-section img.visible {
+    opacity: 1;
+}
+
+/* Images */
+.scroll-container img {
+    display: block; /* Ensures images are block-level elements */
+    margin: 50px auto; /* Adds equal top and bottom spacing (20px) */
+    margin-bottom: 200px; /*increase bottom spacing*/
+    width: 50%; /* Adjusts image size */
+    max-width: 50%; /* Ensures images don't stretch beyond container */
+    opacity: 0;
+    transform: translateY(100px); /* Start below view */
+    transition: opacity 1s ease-out, transform 1s ease-out;
+    border-radius: 20px; /* Rounded edges for images */
+}
+
+/*Horizontal picturewheel and strips*/
+.horizontal-scroll-section {
+    overflow: hidden;
+    height: 1000px; /* Adjust as needed */
+    background-color: var(--scroll-bg-color, black); /* Use CSS variable for customizable color */
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.horizontal-scroll-container {
+    display: flex;
+    height: 100%;
+    width: fit-content;
+    transition: transform 0.5s ease;
+
+}
+
+.strip {
+    width: 60px; /* Adjust the width of each strip */
+    height: 60%;
+    margin-top: 100px; /* Add margin to create space below the navbar */
+    margin-left: 4px; 
+    background-size: cover;
+    background-position: center;
+    transition: width 0.6s ease;
+}
+
+.strip:hover {
+    width: 1000px; /* Adjust the expanded width on hover */
+    height: -1000px; /* Adjust the expanded width on hover */
+}
+
+.indicator {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: rgb(0, 0, 0);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+:root {
+    --scroll-bg-color: black; /* Default color */
+    --navbar-bg-color: #333;
+    --navbar-text-color: white;
+    --navbar-hover-color: #faab00;
+}
+
+
+/*navigation bar section*/
+body {
+    padding-top: 0; /* Remove top padding */
+}
+
+.navbar {
+    padding: 0.5rem 1rem; /* Reduce overall padding */
+    min-height: 80px; /* Reduce minimum height */
+}
+
+.container-fluid {
+    padding-left: 0 15px; /* Add some left padding to the container */
+    display: flex;
+    padding: 15px;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+}
+
+.navbar-brand-container {
+    display: flex;
+    align-items: center;
+    margin-right: auto; /* Push other elements to the right */
+    flex-shrink: 0;
+}
+
+.navbar-logo {
+    height: 10%; /* Reduce logo size */
+    width: 10%;
+    margin-right: 10px;
+}
+
+.navbar-brand {
+    font-size: 1.2rem; /* Reduce font size if needed */
+    white-space: normal; /* Prevent wrapping */
+}
+
+.navbar-collapse {
+    flex-grow: 0;
+}
+
+
+/* Adjust social links positioning */
+.social-links-container {
+    position: relative;
+    top: 50px;
+    right: 125px;
+    display: flex;
+}
+
+.social-links {
+    display: flex;
+    padding: 20px;
+    margin: 0;
+    list-style: none;
+}
+
+.social-icon {
+    width: 50px; /* Reduce icon size */
+    height: 50px;
+    margin-left: 0px;
+
+}
+
+/* Adjust main navigation links */
+.navbar-nav {
+    margin-left: auto;
+}
+
+@media (max-width: 991px) {
+    .container-fluid {
+        flex-wrap: wrap;
+    }
+
+    .navbar-brand-container {
+        margin-bottom: 10px;
+    }
+
+    .social-links-container {
+        position: static;
+        width: 100%;
+        justify-content: center;
+    }
+
+    .social-links {
+        justify-content: center;
+        padding-right: 0;
+    }
+}
+
+
+.card-img-top {
+    width: 100%;
+    height: 200px; /* Adjust this value as needed */
+    object-fit: cover;
+}
+
+
+.fade-in-on-scroll {
+    opacity: o;
+    transform: translateY(0); /* Start below view */
+    transition: opacity 3s ease-in-out, transform 3s ease-in-out;
+}
+.fade-in-on-scroll.visible {
+    opacity: 1;
+    transform: translateY(-20); /* Start at the top of the view */
+}
+/* Add the following CSS code to handle fading out of view */
+/* .fade-in-on-scroll.fade-out {
+    opacity: 1;
+    transform: translateY(50px); Start below view 
+} */
+
+.h1-section {
+    font-size: 3rem; /* Increase the font size */
+    text-shadow: 4px 2px 2px rgba(255, 165, 0, 0.7); /* Orange text shadow */
+    border: 2px solid white; /* Add a border */
+    padding: 1px 40px; /* Add padding inside the border */
+    display: inline-block; /* Make the element fit its content */
+    margin: 30px auto 50px; /* Center the element and adjust vertical spacing */
+    border-radius: 15px; /* Rounded corners */
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    box-shadow: 0 0 15px rgba(255, 165, 0, 0.5); /* Outer glow effect */
+    position: relative; /* For pseudo-element positioning */
+}
+
+.h1-image-title {
+    font-size: 3rem; /* Increase the font size */
+    text-shadow: 4px 2px 2px rgba(255, 165, 0, 0.7); /* Orange text shadow */
+    border: 2px solid white; /* Add a border */
+    padding: 10px 40px; /* Add padding inside the border */
+    display: inline-block; /* Make the element fit its content */
+    border-radius: 5px; /* Rounded corners */
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    box-shadow: 3px 3px 3px rgba(255, 165, 0, 0.5); /* Outer glow effect */
+    color: white;
+    position: absolute; /* Position absolutely within its container */
+    left: 50%; /* Move to the horizontal center */
+    transform: translateX(-50%); /* Adjust back by half its width */
+    top: 10px; /* Distance from the top of its container */
+    margin-bottom:40px;
+    width: auto; /* Allow the width to adjust to content */
+    max-width: 90%; /* Prevent it from becoming too wide on small screens */
+    text-align: center; /* Center the text inside */
+    z-index: 10; /* Ensure it's above other elements */
+}
+
+.h1-portfolio-title {
+    text-shadow: 4px 2px 2px rgba(255, 165, 0, 0.7); /* Orange text shadow */
+    border: 2px solid white; /* Add a border */
+    border-radius: 5px; /* Rounded corners */
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    box-shadow: 3px 3px 3px rgba(255, 165, 0, 0.5); /* Outer glow effect */
+    color: white;
+    left: 50%; /* Move to the horizontal center */
+    margin-bottom: 65px;
+    padding: 0px 0px; /* Add padding inside the border */
+    transform: translateX(-50%); /* Adjust back by half its width */
+    position: relative; /* Position absolutely within its container */
+    text-align: center;
+    font-size: 3rem; /* Increase the font size */ 
+    width: 400px; /* Allow the width to adjust to content */
+    max-width: 90%; /* Prevent it from becoming too wide on small screens */
+}
+
+/* Add this to the parent container of .h1-image-title */
+.image-container {
+    position: relative; /* Make it a positioning context for absolute elements */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+    padding-top: 0px; /* Add some top padding to accommodate the title */
+    margin-bottom: 40px;
+}
+
+/* Add a decorative element */
+.h1-section::before,
+.h1-section::after {
+    content: '•';
+    color: orange;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 3rem;
+}
+
+.h1-section::before {
+    left: 15px;
+}
+
+.h1-section::after {
+    right: 15px;
+}
+
+.p-section {
+    font-size: 3rem; /* Increase the font size */
+    margin: 50px auto 10px; /* Center the paragraph and adjust vertical spacing */
+    padding: 40px; /* Increased padding for more space between content and border */
+    max-width: 80%; /* Limit the width to 80% of its container */
+    text-align: center; /* Center the text */
+    border-radius: 15px; /* Rounded corners */
+}
+
+.a-section a{
+    text-align: center; /* Center the text */
+    font-size: 2rem;
+    margin: 50px auto 10px; /* Center the section and adjust vertical spacing */
+    padding: 40px; /* Increased padding for more space between content and border */
+    max-width: 80%; /* Limit the width to 80% of its container */
+    color: orange;
+    text-decoration: none; /* Remove underline */
+}
+.a-section:hover {
+    color: black; /* Change color on hover */
+}
+
+
+
+/* Portfolio Section Background */
+#portfolio {
+    background-color: white; /* Dark background for the entire portfolio section */
+    padding: 50px 0; /* Add some padding for spacing */
+}
+
+#portfolio .row {
+    margin-bottom: 30px;
+}
+
+/* Cards inside the portfolio section */
+#portfolio .card {
+    background-color: #333; /* Dark background for cards */
+    color: white; /* White text for cards */
+    border-radius: 10px; /* Rounded edges for cards */
+    border: 2px solid #444; /* Border for cards */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#portfolio .card:hover {
+    transform: scale(1.05); /* Slightly enlarge cards on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow on hover */
+}
+
+/* Images inside cards */
+#portfolio .card-img-top {
+    border-top-left-radius: 15px; /* Rounded edges for top of card images */
+    border-top-right-radius: 15px;
+}
+
+/* Card body */
+#portfolio .card-body {
+    padding: 20px;
+}
+
+/* Card title */
+#portfolio .card-title {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+/* Card text */
+#portfolio .card-text {
+    font-size: 1rem;
+    margin-bottom: 15px;
+}
+
+/* Buttons inside cards */
+#portfolio .btn-primary {
+    background-color: #007bff; /* Bootstrap primary color */
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+#portfolio .btn-primary:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+}
