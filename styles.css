@@ -1,46 +1,38 @@
 /* Top Section */
 .top-section {
-    background-color: rgb(255, 174, 0); /* Ensure black background */
-    color: white;
+    text-align: center;
+    min-height: 10vh;
+    padding: 100px 0;
+    color: #0D0D0D; /* White text color */
+}
+
+#portfolio .top-section {
+    background-color: #A66124; /* Ensure black background */
+    color: rgb(0, 0, 0);
     text-align: center;
     min-height: 10vh;
     padding: 100px 0;
 }
-
 /* Middle Section */
 .middle-section {
-    background-color: black; /* Dark background for the entire portfolio section */
+    background-color: black; /* background color of slim border above protfolio select */
     padding: 50px 0; /* Add some padding for spacing */
 }
 
 /* Bottom Section */
 .bottom-section {
-    background-color: white; /* Dark background for bottom section */
-    color: orange; /* White text for bottom section */
-    padding: 100px 0; /* Add some padding for spacing */
+    background-color: #D9D5D2;
+    color: #F27405;
+    padding: 30px 0;
     text-align: center;
-    margin: 10px auto 100px; /* Center the image horizontally and adjust vertical spacing */
     font-size: 3rem;
+    width: 100%; /* Ensure it spans the full width */
+    margin: 0; /* Remove any margin */
+    min-height: 150px; /* Set a minimum height to ensure visibility */
+    display: flex; /* Use flexbox for centering content */
+    justify-content: center;
+    align-items: center;
 }
-
-/* Apply existing styles to the respective sections 
-.scroll-container,
-.fade-in-on-scroll,
-.picture-section img,
-.h1-section,
-.p-section,
-#portfolio {
-    Apply styles as needed 
-} */
-/* Adjust the positioning of elements within each section */
-/* .picture-section img {
-    width: 30%;  Shrink the image to 70% of its container width
-    height: auto;  Maintain aspect ratio 
-    display: block;  Ensure the image is a block-level element 
-    margin: 0 auto;  Center the image horizontally and adjust vertical spacing 
-    margin-bottom: 50px; Adds 20px of spacing below images 
-    transition: opacity 1s ease-in-out;
-} */
 
 .picture-section img.visible {
     opacity: 1;
@@ -62,7 +54,7 @@
 /*Horizontal picturewheel and strips*/
 .horizontal-scroll-section {
     overflow: hidden;
-    height: 1000px; /* Adjust as needed */
+    height: 1200px; /* Adjust as needed */
     background-color: var(--scroll-bg-color, black); /* Use CSS variable for customizable color */
     position: relative;
     justify-content: center;
@@ -75,14 +67,15 @@
     height: 100%;
     width: fit-content;
     transition: transform 0.5s ease;
-
+    margin-bottom: -100px; /* Adjust to create space below the navbar */
 }
 
 .strip {
     width: 60px; /* Adjust the width of each strip */
     height: 60%;
-    margin-top: 100px; /* Add margin to create space below the navbar */
+    margin-top: 180px; /* Add margin to create space below the navbar */
     margin-left: 4px; 
+    margin-bottom: -100px;
     background-size: cover;
     background-position: center;
     transition: width 0.6s ease;
@@ -90,7 +83,7 @@
 
 .strip:hover {
     width: 1000px; /* Adjust the expanded width on hover */
-    height: -1000px; /* Adjust the expanded width on hover */
+    height: 60%; /* Adjust the expanded width on hover */
 }
 
 .indicator {
@@ -104,98 +97,146 @@
 
 :root {
     --scroll-bg-color: black; /* Default color */
-    --navbar-bg-color: #333;
-    --navbar-text-color: white;
-    --navbar-hover-color: #faab00;
+    --navbar-bg-color: #D9D5D2;
+    --navbar-text-color: #0D0D0D;
+    --navbar-hover-color: orange;
 }
 
 
 /*navigation bar section*/
 body {
-    padding-top: 0; /* Remove top padding */
+    margin: 0;
+    padding: 0;
+    padding-top: 160px; /* Adjust based on your navbar height */
+    
+
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 .navbar {
-    padding: 0.5rem 1rem; /* Reduce overall padding */
-    min-height: 80px; /* Reduce minimum height */
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 999;
+    margin: 0 !important;
+    padding: 0.25rem 1rem !important; /* Tighten space */
+    background-color: #736C66; /* or match your navbar/bg */
 }
-
 .container-fluid {
-    padding-left: 0 15px; /* Add some left padding to the container */
-    display: flex;
-    padding: 15px;
-    justify-content: space-between;
-    flex-wrap: nowrap;
+    padding-left: 0;
+    padding-right: 0;
 }
 
 .navbar-brand-container {
     display: flex;
     align-items: center;
-    margin-right: auto; /* Push other elements to the right */
-    flex-shrink: 0;
+    color: #0D0D0D; /* White text color */
 }
 
 .navbar-logo {
-    height: 10%; /* Reduce logo size */
-    width: 10%;
+    height: 10%; /* Adjust as needed */
+    width: 10%; /* Adjust as needed */
     margin-right: 10px;
+    margin: -20px;
+    margin-left: -30px;
 }
+
 
 .navbar-brand {
     font-size: 1.2rem; /* Reduce font size if needed */
-    white-space: normal; /* Prevent wrapping */
+    padding: 20px;
+    margin: 0;
 }
 
 .navbar-collapse {
     flex-grow: 0;
+    margin: 0px;
 }
 
 
 /* Adjust social links positioning */
 .social-links-container {
-    position: relative;
-    top: 50px;
-    right: 125px;
     display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-top: -110px; /* space below navbar */
+    padding: 50px 20px 0; /* top spacing, side padding */
+    background-color: #736C66; /* or match your navbar/bg */
+    color: #0D0D0D; /* White text color */
+
 }
 
 .social-links {
     display: flex;
-    padding: 20px;
-    margin: 0;
+    flex-direction: row; /* Ensure horizontal layout */
+    gap: 20px; /* Space between icons */
     list-style: none;
+    padding-right: 10px;
+    margin: 0;
+}
+
+.social-links .nav-item {
+    display: flex;
+    align-items: center;
 }
 
 .social-icon {
-    width: 50px; /* Reduce icon size */
-    height: 50px;
+    width: 60px; /* Reduce icon size */
+    height: 60px;
     margin-left: 0px;
-
 }
 
 /* Adjust main navigation links */
-.navbar-nav {
-    margin-left: auto;
+nav.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    color: #0D0D0D; /* White text color */
+
 }
 
 @media (max-width: 991px) {
+    .navbar {
+        align-items: center; /* Center items vertically */
+    }
     .container-fluid {
-        flex-wrap: wrap;
+        padding-left: 10px;
+        padding-right: 10px;
     }
 
     .navbar-brand-container {
         margin-bottom: 10px;
+        margin-right: 0;
     }
 
     .social-links-container {
-        position: static;
-        width: 100%;
-        justify-content: center;
+        display: flex;
+        justify-content: flex-end;
+        align-items: left;
+        margin-top: 0px; /* space below navbar */
+        padding: 10px 20px 0; /* top spacing, side padding */
+        background-color: transparent; /* or match your navbar/bg */
     }
 
     .social-links {
-        justify-content: center;
-        padding-right: 0;
+        display: flex;
+        gap: 20px;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .navbar-nav {
+        margin-right: 0; /* Remove right margin on small screens */
+        margin-left: auto;
+        align-items: center;
     }
 }
 
@@ -224,7 +265,7 @@ body {
 
 .h1-section {
     font-size: 3rem; /* Increase the font size */
-    text-shadow: 4px 2px 2px rgba(255, 165, 0, 0.7); /* Orange text shadow */
+    text-shadow: 4px 2px 2px rgba(255, 165, 0, 0.7); /* #F27405 text shadow */
     border: 2px solid white; /* Add a border */
     padding: 1px 40px; /* Add padding inside the border */
     display: inline-block; /* Make the element fit its content */
@@ -235,9 +276,37 @@ body {
     position: relative; /* For pseudo-element positioning */
 }
 
+.h1-subsection {
+    font-size: 2rem; /* Slightly smaller font size */
+    text-shadow: 2px 1px 1px rgba(255, 165, 0, 0.5); /* Lighter text shadow */
+    border: 1px solid white; /* Thinner border */
+    padding: 20px 20px; /* Adjust padding */
+    display: block; /* Make the element fit its content */
+    margin: 0px auto; /* Adjust vertical spacing */
+    border-radius: 10px; /* Slightly rounded corners */
+    background-color: rgba(0, 0, 0, 0.3); /* Lighter semi-transparent background */
+    box-shadow: 0 0 10px rgba(255, 165, 0, 0.3); /* Subtle outer glow effect */
+    text-align: center; /* Center the text */
+    position: relative; /* For pseudo-element positioning */
+    color: white; /* White text color */
+    max-width: 80%; /* Limit the width */
+    width: fit-content; /* Shrink the element to fit its content */
+    line-height: 0.2;
+}
+
+.h1-subsection::before,
+.h1-subsection::after {
+    content: '•';
+    color: #F27405;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 3rem;
+}
+
 .h1-image-title {
     font-size: 3rem; /* Increase the font size */
-    text-shadow: 4px 2px 2px rgba(255, 165, 0, 0.7); /* Orange text shadow */
+    text-shadow: 4px 2px 2px rgba(255, 165, 0, 0.7); /* #F27405 text shadow */
     border: 2px solid white; /* Add a border */
     padding: 10px 40px; /* Add padding inside the border */
     display: inline-block; /* Make the element fit its content */
@@ -248,7 +317,7 @@ body {
     position: absolute; /* Position absolutely within its container */
     left: 50%; /* Move to the horizontal center */
     transform: translateX(-50%); /* Adjust back by half its width */
-    top: 10px; /* Distance from the top of its container */
+    top: 70px; /* Distance from the top of its container */
     margin-bottom:40px;
     width: auto; /* Allow the width to adjust to content */
     max-width: 90%; /* Prevent it from becoming too wide on small screens */
@@ -257,7 +326,7 @@ body {
 }
 
 .h1-portfolio-title {
-    text-shadow: 4px 2px 2px rgba(255, 165, 0, 0.7); /* Orange text shadow */
+    text-shadow: 4px 2px 2px rgba(255, 165, 0, 0.7); /* #F27405 text shadow */
     border: 2px solid white; /* Add a border */
     border-radius: 5px; /* Rounded corners */
     background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
@@ -281,7 +350,7 @@ body {
     justify-content: center;
     align-items: flex-start;
     width: 100%;
-    padding-top: 0px; /* Add some top padding to accommodate the title */
+    padding-top: 30px; /* Add some top padding to accommodate the title */
     margin-bottom: 40px;
 }
 
@@ -289,7 +358,7 @@ body {
 .h1-section::before,
 .h1-section::after {
     content: '•';
-    color: orange;
+    color: #F27405;
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -311,6 +380,7 @@ body {
     max-width: 80%; /* Limit the width to 80% of its container */
     text-align: center; /* Center the text */
     border-radius: 15px; /* Rounded corners */
+    color: #0D0D0D; /* White text color */
 }
 
 .a-section a{
@@ -319,7 +389,7 @@ body {
     margin: 50px auto 10px; /* Center the section and adjust vertical spacing */
     padding: 40px; /* Increased padding for more space between content and border */
     max-width: 80%; /* Limit the width to 80% of its container */
-    color: orange;
+    color: #F27405;
     text-decoration: none; /* Remove underline */
 }
 .a-section:hover {
@@ -329,18 +399,27 @@ body {
 
 
 /* Portfolio Section Background */
-#portfolio {
-    background-color: white; /* Dark background for the entire portfolio section */
+#portfolio, #index {
+    background-color: #D9D5D2; /* Dark background for the entire portfolio section */
     padding: 50px 0; /* Add some padding for spacing */
+}
+
+/* project pages top section*/
+.project-page {
+    background-color: #D9D5D2; /* Light background for the project page */
 }
 
 #portfolio .row {
     margin-bottom: 30px;
 }
 
+#portfolio .py-5 {
+    background-color: #000000; /* Light background for the portfolio section */
+    padding: 0px 0; /* Add some padding for spacing */
+}
 /* Cards inside the portfolio section */
 #portfolio .card {
-    background-color: #333; /* Dark background for cards */
+    background-color: #0D0D0D; /* Dark background for cards */
     color: white; /* White text for cards */
     border-radius: 10px; /* Rounded edges for cards */
     border: 2px solid #444; /* Border for cards */
@@ -367,17 +446,20 @@ body {
 #portfolio .card-title {
     font-size: 1.5rem;
     margin-bottom: 10px;
+    color: #A66124;
+    
 }
 
 /* Card text */
 #portfolio .card-text {
     font-size: 1rem;
     margin-bottom: 15px;
+    
 }
 
 /* Buttons inside cards */
 #portfolio .btn-primary {
-    background-color: #007bff; /* Bootstrap primary color */
+    background-color: #736C66; /* Bootstrap primary color */
     border: none;
     border-radius: 5px;
     padding: 10px 20px;
@@ -386,5 +468,167 @@ body {
 }
 
 #portfolio .btn-primary:hover {
-    background-color: #0056b3; /* Darker shade on hover */
+    background-color: orange; /* Darker shade on hover */
+}
+
+.text-center {
+    padding: 20px;
+    margin: 20px;
+    justify-items: center;
+}
+/* Shrink the width of the form fields in the contact form */
+#contact .mb-3 {
+    max-width: 500px; /* Set the maximum width */
+    margin: 0 auto; /* Center the fields horizontally */
+}
+
+#contact .mb-4 {
+    margin: 50px auto; /* Center the fields horizontally */
+    max-width: 500px; /* Set the maximum width */
+}
+
+#contact .form-label {
+    color: #D9D5D2; /* White text color */
+}
+
+/*Pricing page section*/
+/* Pricing page specific styles */
+#price {
+    background-color: #D9D5D2;
+    margin-bottom: -200px; /* Add this line to cut off more of the bottom */
+    overflow: auto; /* Add this to prevent scrollbars */
+}
+
+#price .top-section {
+    padding: 50px 0;
+}
+
+#price .h1-section h1 {
+    color: #0D0D0D;
+}
+
+#price .p-section {
+    font-size: 1.2rem;
+    color: #0D0D0D;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+#price .middle-section {
+    background-color: #D9D5D2;
+    padding-top: 50px; /* Added top padding */
+
+}
+
+#price .fade-in-on-scroll {
+    opacity: 1;
+    transform: none;
+}
+
+#price .h1-image-title {
+    position: relative;
+    top: -150px;
+    margin-bottom: 30px; /* Added margin for spacing */
+
+    font-size: 3rem; /* Increase the font size */
+    text-shadow: 4px 2px 2px rgba(255, 165, 0, 0.7); /* #F27405 text shadow */
+    border: 2px solid white; /* Add a border */
+    display: inline-block; /* Make the element fit its content */
+    border-radius: 5px; /* Rounded corners */
+    box-shadow: 3px 3px 3px rgba(255, 165, 0, 0.5); /* Outer glow effect */
+    color: white;
+}
+
+#price .pricing-list {
+    padding: 30px;
+    max-width: 600px;
+    margin: 0 auto;
+    font-size: 3rem; /* Increase the font size */
+    color: #0D0D0D;
+}
+
+#price .custom-bullet-list {
+    list-style-type: none;
+    padding-left: 0;
+    color: #0D0D0D;
+}
+
+#price .custom-bullet-list > li {
+    position: relative;
+    padding: 10px 0 10px 30px; /* Adjusted padding */
+    top: -150px;
+    margin-bottom: 10px;
+    color: #0D0D0D;
+    font-size: 1.5rem;
+}
+
+#price .custom-bullet-list > li::before {
+    content: '•';
+    color: rgba(255, 165, 0, 0.7);
+    font-size: 1.5em;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    top: 0.77em; /* Adjust this value to align the bullet vertically */
+    transform: translateY(-50%);
+}
+
+#price .custom-bullet-list .sublist {
+    list-style-type: none;
+    padding-left: 20px;
+    margin-top: 10px;
+}
+
+#price .custom-bullet-list .sublist li {
+    font-size: 1.3rem;
+    margin-bottom: 5px;
+    padding-left: 20px;
+    position: relative;
+}
+
+#price .custom-bullet-list .sublist li::before {
+    content: '◦';
+    color: orange;
+    font-size: 1.3em;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+#price .bottom-section {
+    background-color: #D9D5D2;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+#price .a-section {
+    position: relative;
+    top: -350px; /* Move the button up */
+    margin-bottom: -450px; /* Adjust spacing */
+}
+
+#price .a-section a {
+    color: #0D0D0D;
+    border: 2px solid #0D0D0D;
+    padding: 10px 30px;
+    border-radius: 5px;
+    font-size: .5em;
+    transition: all 0.3s ease;
+    display: inline-block; /* Ensures padding works correctly */
+}
+
+#price .a-section a:hover {
+    background-color: #0D0D0D;
+    color: #D9D5D2;
+}
+
+#price .custom-bullet-list > li > a.price-contact {
+    color: #0D0D0D; /* Initial color, matching other text */
+    text-decoration: none; /* Remove underline */
+    transition: color 0.3s ease; /* Smooth transition for color change */
+}
+
+#price .custom-bullet-list > li > a.price-contact:hover {
+    color: orange !important; /* Change to orange on hover, use !important to ensure it's not overridden */
 }

@@ -1,42 +1,68 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Your Name - Portfolio">
+    <meta name="description" content="Willyum Oliver - Portfolio">
     <title>Willyum Oliver | Portfolio</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script defer src="script.js"></script>
 </head>
 <body>
-
-    <!-- Navigation Bar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container">
+<!-- Navigation Bar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+        <div class="navbar-brand-container">
+            <img src="Images/DH06_Logo_Fixed.png" alt="Logo" class="navbar-logo">
             <a class="navbar-brand" href="index.html">Willyum Oliver | Portfolio</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="portfolio.html">Portfolio</a></li>
-                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-                </ul>
-            </div>
         </div>
-    </nav>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="portfolio.html">Portfolio</a></li>
+                <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                <li class="nav-item"><a class="nav-link" href="price.html">Pricing</a></li>
+            </ul>
+        </div>
+        <div class="social-links-container">
+            <ul class="navbar-nav social-links">
+                <li class="nav-item"><a class="nav-link" href="https://www.instagram.com/dh06_production/"><img src="Images/instagram.png" alt="Instagram" class="social-icon"></a></li>
+                <li class="nav-item"><a class="nav-link" href="https://github.com/Corey2Lit/Camp-System"><img src="Images/github.png" alt="GitHub" class="social-icon"></a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+    <!-- Horizontal Scroll Section -->
+    <div class="horizontal-scroll-section">\
+        <div class="horizontal-scroll-container">
+            <h1 class="h1-image-title">Lifetime Favorites</h1>
+            <div class="strip" style="background-image: url('Images/Project1_Images/JJ_solo_grad.jpg');"></div>
+            <div class="strip" style="background-image: url('Images/Project1_Images/JJ_solo_grad.jpg');"></div>
+            <div class="strip" style="background-image: url('Images/Project1_Images/JJ_solo_grad.jpg');"></div>
+            <div class="strip" style="background-image: url('Images/Project1_Images/JJ_solo_grad.jpg');"></div>
+            <div class="strip" style="background-image: url('Images/Project1_Images/JJ_solo_grad.jpg');"></div>
+            <!-- Add more strips as needed -->
+        </div>
+    </div>
 
     <!-- Portfolio Section -->
-    <section id="portfolio" class="py-5 bg-light">
-        <div class="container">
-            <h2 class="text-center">Portfolio</h2>
-            <div class="row">
-                <!-- Project 1 -->
-                <div class="col-md-4">
+    <div class="middle-section">
+        <section id="portfolio" class="py-5">
+            <h1 class="h1-portfolio-title">Portfolio</h1>
+            <div class="container">
+                <div class="row">
+                    <!-- Project 1 -->
+                    <div class="col-md-4">
                     <div class="card">
-                        <img src="Images/Project1_Images/JJ_solo_grad.jpg" class="card-img-top" alt="Project 1">
+                        <img src="Images/Project1_Images/will_solo_prom.jpeg" class="card-img-top" alt="Project 1">
                         <div class="card-body">
                             <h5 class="card-title">Graduation</h5>
                             <p class="card-text">Brief description of the project.</p>
@@ -47,11 +73,11 @@
                 <!-- Project 2 -->
                 <div class="col-md-4">
                     <div class="card">
-                        <img src="project2.jpg" class="card-img-top" alt="Project 2">
+                        <img src="Images/Project2_Images/Nat_Courtyard_1.jpg" class="card-img-top" alt="Project 2" style="object-fit: cover; object-position: center 20%;">
                         <div class="card-body">
                             <h5 class="card-title">Cosplay Shoot</h5>
                             <p class="card-text">Brief description of the project.</p>
-                            <a href="project2.html" class="btn btn-primary">View Project</a>
+                            <a href="Project/project2.html" class="btn btn-primary">View Project</a>
                         </div>
                     </div>
                 </div>
@@ -59,89 +85,94 @@
 					 <!-- Project 3 -->
                 <div class="col-md-4">
                     <div class="card">
-                        <img src="project2.jpg" class="card-img-top" alt="Project 3">
+                        <img src="Images/Project3_Images/row_solo_2.jpg" class="card-img-top" alt="Project 3">
                         <div class="card-body">
                             <h5 class="card-title">Birthday Bash</h5>
                             <p class="card-text">Brief description of the project.</p>
-                            <a href="project2.html" class="btn btn-primary">View Project</a>
+                            <a href="Project/project3.html" class="btn btn-primary">View Project</a>
                         </div>
                     </div>
                 </div>
-  					</div>
-					<div class= "row mt-4"> <!-- add margin-top to create spacing -->
-					 <!-- Project 4 -->
+  			</div>
+			<div class= "row mt-4"> <!-- add margin-top to create spacing -->
+				<!-- Project 4 -->
                 <div class="col-md-4">
                     <div class="card">
-                        <img src="project2.jpg" class="card-img-top" alt="Project 4">
+                        <img src="Images/Project4_Images/Brooke_Garden_2.jpg" class="card-img-top" alt="Project 4">
                         <div class="card-body">
                             <h5 class="card-title">Texas Trip</h5>
                             <p class="card-text">Brief description of the project.</p>
-                            <a href="project2.html" class="btn btn-primary">View Project</a>
+                            <a href="Project/project4.html" class="btn btn-primary">View Project</a>
                         </div>
                     </div>
                 </div>
                 <!-- Project 5 -->
                 <div class="col-md-4">
                     <div class="card">
-                        <img src="project1.jpg" class="card-img-top" alt="Project 5">
+                        <img src="Images/Project5_Images/Ocean_Sunset_12.jpg" class="card-img-top" alt="Project 5">
                         <div class="card-body">
                             <h5 class="card-title">Charleston Trip</h5>
                             <p class="card-text">Brief description of the project.</p>
-                            <a href="project1.html" class="btn btn-primary">View Project</a>
+                            <a href="Project/project5.html" class="btn btn-primary">View Project</a>
                         </div>
                     </div>
                 </div>
                 <!-- Project 6 -->
                 <div class="col-md-4">
                     <div class="card">
-                        <img src="project2.jpg" class="card-img-top" alt="Project 6">
+                        <img src="Images/Project6_Images/Fall_Group_7.jpeg" class="card-img-top" alt="Project 6">
                         <div class="card-body">
-                            <h5 class="card-title">Cosplay Shoot</h5>
+                            <h5 class="card-title">Seasonal Shoots</h5>
                             <p class="card-text">Brief description of the project.</p>
-                            <a href="project2.html" class="btn btn-primary">View Project</a>
+                            <a href="Project/project6.html" class="btn btn-primary">View Project</a>
                         </div>
                     </div>
                 </div>
-</div>
-					<div class= "row mt-4">
-					 <!-- Project 7 -->
+            </div>
+			<div class= "row mt-4">
+			    <!-- Project 7 -->
                 <div class="col-md-4">
                     <div class="card">
-                        <img src="project2.jpg" class="card-img-top" alt="Project 7">
+                        <img src="Images/Project7_Images/Solo_Bridge_3.jpg" class="card-img-top" alt="Project 7" style="object-fit: cover; height: 200px;">
                         <div class="card-body">
                             <h5 class="card-title">Riverwalk</h5>
                             <p class="card-text">Brief description of the project.</p>
-                            <a href="project2.html" class="btn btn-primary">View Project</a>
+                            <a href="Project/project7.html" class="btn btn-primary">View Project</a>
                         </div>
                     </div>
                 </div>
-					 <!-- Project 8 -->
+				<!-- Project 8 -->
                 <div class="col-md-4">
                     <div class="card">
-                        <img src="project2.jpg" class="card-img-top" alt="Project 8">
+                        <div class="card-img-top" style="
+                            height: 200px; 
+                            background-image: url('Images/Project8_Images/Pet_Cat_1.jpeg');
+                            background-size: 140% auto;
+                            background-position: center 70%;
+                            background-repeat: no-repeat;">
+                        </div>
                         <div class="card-body">
                             <h5 class="card-title">Pets/Food</h5>
                             <p class="card-text">Brief description of the project.</p>
-                            <a href="project2.html" class="btn btn-primary">View Project</a>
+                            <a href="Project/project8.html" class="btn btn-primary">View Project</a>
                         </div>
                     </div>
                 </div>
-					 <!-- Project 9 -->
+				<!-- Project 9 -->
                 <div class="col-md-4">
                     <div class="card">
-                        <img src="project2.jpg" class="card-img-top" alt="Project 9">
+                        <img src="Images/Project9_Images/Flyer_1.png" class="card-img-top" alt="Project 9">
                         <div class="card-body">
                             <h5 class="card-title">Miscellaneous</h5>
                             <p class="card-text">Brief description of the project.</p>
-                            <a href="project2.html" class="btn btn-primary">View Project</a>
+                            <a href="Project/project9.html" class="btn btn-primary">View Project</a>
                         </div>
                     </div>
                 </div>
-				</div>
-                <!-- More Projects -->
-            </div>
+			</div>
+            <!-- More Projects -->
         </div>
     </section>
-
+    </div>
 </body>
 </html>
