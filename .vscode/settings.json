@@ -1,0 +1,10 @@
+{
+    "githubPages.convertHtml": {
+      "sourceDirectory": "./",
+      "outputDirectory": "./_site",
+      "excludeFiles": [
+        ".vscode",
+        "node_modules"
+      ]
+    }
+  }
