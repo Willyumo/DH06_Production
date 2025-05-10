@@ -376,7 +376,6 @@ nav.navbar {
 .p-section {
     font-size: 3rem; /* Increase the font size */
     margin: 50px auto 10px; /* Center the paragraph and adjust vertical spacing */
-    padding: 40px; /* Increased padding for more space between content and border */
     max-width: 80%; /* Limit the width to 80% of its container */
     text-align: center; /* Center the text */
     border-radius: 15px; /* Rounded corners */
@@ -397,6 +396,12 @@ nav.navbar {
 }
 
 
+.body-wrapper {
+  transform: scale(0.8); /* Scale down the entire body */
+  transform-origin: top center;
+  width: 125%; /* counteracts the scale */
+  margin-left: -12.5%; /* centers the scaled content */
+}
 
 /* Portfolio Section Background */
 #portfolio, #index {
@@ -476,6 +481,11 @@ nav.navbar {
     margin: 20px;
     justify-items: center;
 }
+
+#about .p-section{
+    color: #D9D5D2;
+    font-size: 2.5rem;
+}
 /* Shrink the width of the form fields in the contact form */
 #contact .mb-3 {
     max-width: 500px; /* Set the maximum width */
@@ -485,10 +495,37 @@ nav.navbar {
 #contact .mb-4 {
     margin: 50px auto; /* Center the fields horizontally */
     max-width: 500px; /* Set the maximum width */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#contact .p-section {
+    color: #D9D5D2; /* White text color */
+    font-size: 2rem;
+    /*max-width: 90%; /* Limit the width to 80% of its container */
+    padding-top: 20px;
+    padding-bottom: 100px;
 }
 
 #contact .form-label {
     color: #D9D5D2; /* White text color */
+    
+}
+
+#contact .btn-primary-2 {
+    background-color: orange; /* orange text color */
+    /*border:none;*/
+    border-radius: 122px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+    border-color: #D9D5D2; 
+}
+
+#contact .bottom-section {
+    background-color: #D9D5D2; /* Light background for the contact section */
+
 }
 
 /*Pricing page section*/
@@ -517,7 +554,6 @@ nav.navbar {
 #price .middle-section {
     background-color: #D9D5D2;
     padding-top: 50px; /* Added top padding */
-
 }
 
 #price .fade-in-on-scroll {
@@ -527,9 +563,9 @@ nav.navbar {
 
 #price .h1-image-title {
     position: relative;
-    top: -150px;
-    margin-bottom: 30px; /* Added margin for spacing */
-
+    top: 10px;
+    margin-bottom: 0px; /* Added margin for spacing */
+    padding: 30px;
     font-size: 3rem; /* Increase the font size */
     text-shadow: 4px 2px 2px rgba(255, 165, 0, 0.7); /* #F27405 text shadow */
     border: 2px solid white; /* Add a border */
@@ -598,8 +634,13 @@ nav.navbar {
 
 #price .bottom-section {
     background-color: #D9D5D2;
-    margin-bottom: 0;
-    padding-bottom: 0;
+    margin: 10px;
+    padding: 10px;
+}
+
+#price .p-section {
+    padding: 100px 0 200px;
+    font-size: 1.5rem;
 }
 
 #price .a-section {
