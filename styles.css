@@ -71,6 +71,17 @@
 }
 
 .strip {
+    width: 80px; /* Adjust the width of each strip */
+    height: 60%;
+    margin-top: 180px; /* Add margin to create space below the navbar */
+    margin-left: 4px; 
+    margin-bottom: -100px;
+    background-size: cover;
+    background-position: center;
+    transition: width 0.8s ease;
+}
+
+.strip-portrait {
     width: 60px; /* Adjust the width of each strip */
     height: 60%;
     margin-top: 180px; /* Add margin to create space below the navbar */
@@ -84,6 +95,13 @@
 .strip:hover {
     width: 1000px; /* Adjust the expanded width on hover */
     height: 60%; /* Adjust the expanded width on hover */
+}
+
+.strip-portrait:hover {
+    width: 1000px; /* Adjust the expanded width on hover */
+    height: 60%; /* Adjust the expanded width on hover */
+    background-size: contain;
+    background-repeat: no-repeat;
 }
 
 .indicator {
@@ -376,7 +394,6 @@ nav.navbar {
 .p-section {
     font-size: 3rem; /* Increase the font size */
     margin: 50px auto 10px; /* Center the paragraph and adjust vertical spacing */
-    padding: 40px; /* Increased padding for more space between content and border */
     max-width: 80%; /* Limit the width to 80% of its container */
     text-align: center; /* Center the text */
     border-radius: 15px; /* Rounded corners */
@@ -397,6 +414,12 @@ nav.navbar {
 }
 
 
+.body-wrapper {
+  transform: scale(0.8); /* Scale down the entire body */
+  transform-origin: top center;
+  width: 125%; /* counteracts the scale */
+  margin-left: -12.5%; /* centers the scaled content */
+}
 
 /* Portfolio Section Background */
 #portfolio, #index {
@@ -476,6 +499,11 @@ nav.navbar {
     margin: 20px;
     justify-items: center;
 }
+
+#about .p-section{
+    color: #D9D5D2;
+    font-size: 2.5rem;
+}
 /* Shrink the width of the form fields in the contact form */
 #contact .mb-3 {
     max-width: 500px; /* Set the maximum width */
@@ -485,10 +513,37 @@ nav.navbar {
 #contact .mb-4 {
     margin: 50px auto; /* Center the fields horizontally */
     max-width: 500px; /* Set the maximum width */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#contact .p-section {
+    color: #D9D5D2; /* White text color */
+    font-size: 2rem;
+    /*max-width: 90%; /* Limit the width to 80% of its container */
+    padding-top: 20px;
+    padding-bottom: 100px;
 }
 
 #contact .form-label {
     color: #D9D5D2; /* White text color */
+    
+}
+
+#contact .btn-primary-2 {
+    background-color: orange; /* orange text color */
+    /*border:none;*/
+    border-radius: 122px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+    border-color: #D9D5D2; 
+}
+
+#contact .bottom-section {
+    background-color: #D9D5D2; /* Light background for the contact section */
+
 }
 
 /*Pricing page section*/
@@ -508,16 +563,15 @@ nav.navbar {
 }
 
 #price .p-section {
-    font-size: 1.2rem;
+    font-size: 2rem;
     color: #0D0D0D;
-    max-width: 800px;
+    max-width: 60%;
     margin: 0 auto;
 }
 
 #price .middle-section {
     background-color: #D9D5D2;
-    padding-top: 50px; /* Added top padding */
-
+    padding-top: 0px; /* Added top padding */
 }
 
 #price .fade-in-on-scroll {
@@ -527,9 +581,9 @@ nav.navbar {
 
 #price .h1-image-title {
     position: relative;
-    top: -150px;
-    margin-bottom: 30px; /* Added margin for spacing */
-
+    top: 10px;
+    margin-bottom: 0px; /* Added margin for spacing */
+    padding: 30px;
     font-size: 3rem; /* Increase the font size */
     text-shadow: 4px 2px 2px rgba(255, 165, 0, 0.7); /* #F27405 text shadow */
     border: 2px solid white; /* Add a border */
@@ -540,9 +594,8 @@ nav.navbar {
 }
 
 #price .pricing-list {
-    padding: 30px;
-    max-width: 600px;
-    margin: 0 auto;
+    max-width: 100%; /* Limit the width to 80% of its container */
+    margin: 0 450px;
     font-size: 3rem; /* Increase the font size */
     color: #0D0D0D;
 }
@@ -559,9 +612,10 @@ nav.navbar {
     top: -150px;
     margin-bottom: 10px;
     color: #0D0D0D;
-    font-size: 1.5rem;
+    font-size: 2rem;
 }
 
+/* Adjust the bullet point for main list items */
 #price .custom-bullet-list > li::before {
     content: '•';
     color: rgba(255, 165, 0, 0.7);
@@ -579,13 +633,15 @@ nav.navbar {
     margin-top: 10px;
 }
 
+/* Adjust sublist sub items */
 #price .custom-bullet-list .sublist li {
-    font-size: 1.3rem;
+    font-size: 1.5rem;
     margin-bottom: 5px;
     padding-left: 20px;
     position: relative;
 }
 
+/* Adjust the bullet point for sublist items */
 #price .custom-bullet-list .sublist li::before {
     content: '◦';
     color: orange;
@@ -598,8 +654,13 @@ nav.navbar {
 
 #price .bottom-section {
     background-color: #D9D5D2;
-    margin-bottom: 0;
-    padding-bottom: 0;
+    margin: 10px;
+    padding: 10px;
+}
+
+#price .p-section {
+    padding: 100px 0 200px;
+    font-size: 2rem;
 }
 
 #price .a-section {
@@ -631,4 +692,257 @@ nav.navbar {
 
 #price .custom-bullet-list > li > a.price-contact:hover {
     color: orange !important; /* Change to orange on hover, use !important to ensure it's not overridden */
+}
+
+
+/* MOBILE OPTIMIZATION */
+@media (max-width: 767px) {
+    body {
+        padding-top: 100px;
+        font-size: 16px;
+    }
+
+    .navbar {
+        padding: 0.5rem 1rem;
+    }
+
+    .navbar-logo {
+        height: 40px;
+        width: 40px;
+        margin: 0;
+    }
+
+    .navbar-brand {
+        font-size: 1rem;
+        padding: 0 10px;
+    }
+
+    .social-links-container {
+        position: fixed;
+        top: 10px;
+        right: 10px;
+        background-color: black;
+        padding: 8px;
+        border-radius: 8px;
+        z-index: 999;
+    }
+
+    .social-links {
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .social-icon {
+        width: 30px;
+        height: 30px;
+    }
+
+    .horizontal-scroll-section {
+        height: 100%;
+        overflow-x: scroll;
+        margin-top: -60px;
+    }
+
+    .horizontal-scroll-container {
+        display: flex;
+        flex-wrap: nowrap;
+        position: relative;
+        height: 500px;
+        width: max-content;
+        overflow-x: auto;
+        margin-bottom: 100px;
+        margin-top: -60px;
+
+    }
+
+    .strip,
+    .strip-portrait {
+        width: 200px;
+        height: 500px;
+    }
+
+    .strip:hover,
+    .strip-portrait:hover {
+        width: 4000px;
+        height: 500px;
+    }
+
+    .h1-image-title {
+        position: absolute;
+        top: 100px; /* Enough space below navbar */
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 2; /* Just above the strips but not globally floating */
+        padding: 8px 16px;
+        width: 90%;
+        max-width: 300px;
+        font-size: 1.4rem;
+        background-color: rgba(0, 0, 0, 0.5);
+        border: 2px solid white;
+        border-radius: 8px;
+        text-align: center;
+        box-shadow: 2px 2px 8px rgba(255, 165, 0, 0.5);
+    }
+
+
+     .h1-portfolio-title {
+    position: relative !important;
+    top: 50px; /* Adjust as needed for mobile spacing */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    width: auto;
+    padding: 8px 16px;
+    font-size: 1.6rem;
+    }
+
+    
+    .social-links-container {
+        position: relative;
+        display: flex;
+        top: -50px;
+        bottom: -50px;
+        right: 0px;
+        background-color: #736C66; /* or match your navbar/bg */
+        padding: 20px 10px;
+        border-radius: 0px;
+    }
+
+    #portfolio .head-container {
+        background-color: #736C66; /* or match your navbar/bg */
+    }
+    .card-img-top {
+        height: 150px;
+    }
+
+    #portfolio .card-title {
+        font-size: 1.2rem;
+    }
+
+    #portfolio .card-text {
+        font-size: 0.9rem;
+    }
+
+    .card-spacing {
+        margin-bottom: 40px; /* Adjust as needed */
+    }
+
+    /* mobile social icons size*/
+    .social-icon {
+        width: 50px;  
+        height: 50px; 
+    }
+    #portfolio .btn-primary {
+        font-size: 0.9rem;
+        padding: 8px 16px;
+    }
+
+    .middle-section,
+    #portfolio,
+    #price .middle-section {
+        padding: 20px 10px;
+    }
+
+    .h1-section {
+        font-size: 1.5rem;
+        margin: 20px auto;
+        padding: .6em;
+        text-align: center;
+        top: 50%;
+        transform: translateY(-50%);
+
+    }
+
+    .h1-subsection::before,
+    .h1-subsection::after {
+        content: '•';
+        color: #F27405;
+        position: relative;
+        padding: 20px 0px 20px 0px;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 3rem;
+    }
+
+    #price .middle-section {
+        background-color: #D9D5D2;
+
+    }
+
+    #price .h1-image-title {
+        padding: .2em;
+        font-size: 2rem;
+    }
+
+    #price .p-section {
+        font-size: 1.5rem;
+        padding-bottom: 50px; /* ← large bottom padding */
+        max-width: 300px;
+    }
+
+    .fade-in-on-scroll {
+        position: relative;
+        top: 200px;
+        left: -425px;
+        padding-bottom: 50px;;
+    }
+
+    .pricing-list,
+    .custom-bullet-list {
+        font-size: 1.2rem;
+
+    }
+
+    #price .custom-bullet-list .sublist li {
+        font-size: 1rem;
+    }
+
+        .pricing-list, 
+    .custom-bullet-list, 
+    .bottom-section, 
+    .a-section {
+        width: 100%;
+        max-width: 100%;
+        padding: 0 16px;
+        box-sizing: border-box;
+    }
+
+    #price .bottom-section {
+        display: flex;
+        position: relative;
+    }
+
+    body {
+        overflow-x: hidden;
+        padding-bottom: 50px;
+    }
+
+    #contact .p-section {
+        font-size: 1.5rem;
+    }
+
+    #contact .mb-3,
+    #contact .mb-4 {
+        max-width: 90%;
+    }
+
+    #about .p-section {
+        margin: 20px auto 5px;
+        font-size: 1.5rem;
+        max-width: 325px;
+    }
+
+    .middle-section {
+        margin-top: -60px;
+    }
+
+    .bottom-section {
+        font-size: 2rem;
+        padding: 20px 10px;
+        margin-bottom: -50px;
+    }
 }
