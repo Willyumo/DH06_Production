@@ -267,7 +267,7 @@ nav.navbar {
 
 
 .fade-in-on-scroll {
-    opacity: o;
+    opacity: 0;
     transform: translateY(0); /* Start below view */
     transition: opacity 3s ease-in-out, transform 3s ease-in-out;
 }
@@ -789,12 +789,12 @@ nav.navbar {
     }
 
 
-     .h1-portfolio-title {
+    .h1-portfolio-title {
     position: relative !important;
     top: 50px; /* Adjust as needed for mobile spacing */
     left: 50%;
     transform: translateX(-50%);
-    z-index: 1000;
+    z-index: 100;
     width: auto;
     padding: 8px 16px;
     font-size: 1.6rem;
@@ -802,19 +802,36 @@ nav.navbar {
 
     
     .social-links-container {
-        position: relative;
-        display: flex;
-        top: -50px;
-        bottom: -50px;
-        right: 0px;
-        background-color: #736C66; /* or match your navbar/bg */
-        padding: 20px 10px;
+        position: sticky;
+        top: 40px;
+        margin-top: -50px;
+        right: 10px;
+        padding: 15px 30px 0px 0px;
         border-radius: 0px;
+        z-index: 990;
+        display: flex;
+        justify-content: flex-end;
+        background-color:  #736C66;
+    }
+
+    #portfolio #index .navbar-brand {
+        font-size: 2rem;
+    }
+
+    .social-links {
+        padding: -30px 0px 0px;
+    }
+
+    #porfolio #index .horizontal-scroll-section, 
+    .horizontal-scroll-container {
+        padding-top: 50px;
+        margin-top: 50px;
     }
 
     #portfolio .head-container {
         background-color: #736C66; /* or match your navbar/bg */
     }
+
     .card-img-top {
         height: 150px;
     }
@@ -827,9 +844,18 @@ nav.navbar {
         font-size: 0.9rem;
     }
 
-    .card-spacing {
-        margin-bottom: 40px; /* Adjust as needed */
+    .row-card-spacing {
+        padding-bottom: -200px;
+        padding-top: -40px;
+        margin-bottom: -200px;
+        margin-top: -40px;
     }
+
+    .col-md-4 {
+        padding-bottom: 100px;
+    }
+
+    
 
     /* mobile social icons size*/
     .social-icon {
@@ -884,11 +910,57 @@ nav.navbar {
         max-width: 300px;
     }
 
+    #project1 #project2 #project3 
+    #project4 #project5 #project6
+    #project7 #project8 #project9 
+    .h1-section, .p-section {
+        font-size: 2rem;
+        margin-top: -80px;
+        padding-top: -150px;
+        padding-bottom: 40px;
+        max-width: 300px;
+    }
+
+
+    .scroll-container img {
+        margin-top: -40px;
+        opacity: 1 !important;
+        transform: none !important;
+        left: 0px;
+
+    }
+
+    #project1 #project2 #project3 
+    #project4 #project5 #project6
+    #project7 #project8 #project9
+    .scroll-container {
+        padding-top: 100px;
+        margin-top: 100px;
+    }
+
     .fade-in-on-scroll {
         position: relative;
         top: 200px;
-        left: -425px;
-        padding-bottom: 50px;;
+        opacity: 1 !important;
+        transform: none !important;
+        padding-bottom: 300px;
+        margin-top: 100px;
+    }
+
+    .picture-section img {
+        height: 80%;
+        width: 80%;
+        max-width: 350px;
+        padding-bottom: 0px;
+        margin-bottom: 200px;
+    }
+
+    #project1 #project2 #project3 
+    #project4 #project5 #project6
+    #project7 #project8 #project9 
+    .text-center {
+        padding-top: 100px;
+        margin-top: 100px;
     }
 
     .pricing-list,
