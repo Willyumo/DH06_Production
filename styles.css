@@ -220,43 +220,7 @@ nav.navbar {
 
 }
 
-@media (max-width: 991px) {
-    .navbar {
-        align-items: center; /* Center items vertically */
-    }
-    .container-fluid {
-        padding-left: 10px;
-        padding-right: 10px;
-    }
 
-    .navbar-brand-container {
-        margin-bottom: 10px;
-        margin-right: 0;
-    }
-
-    .social-links-container {
-        display: flex;
-        justify-content: flex-end;
-        align-items: left;
-        margin-top: 0px; /* space below navbar */
-        padding: 10px 20px 0; /* top spacing, side padding */
-        background-color: transparent; /* or match your navbar/bg */
-    }
-
-    .social-links {
-        display: flex;
-        gap: 20px;
-        list-style: none;
-        padding: 0;
-        margin: 0;
-    }
-
-    .navbar-nav {
-        margin-right: 0; /* Remove right margin on small screens */
-        margin-left: auto;
-        align-items: center;
-    }
-}
 
 
 .card-img-top {
@@ -422,7 +386,7 @@ nav.navbar {
 }
 
 /* Portfolio Section Background */
-#portfolio, #index {
+#portfolio #index {
     background-color: #D9D5D2; /* Dark background for the entire portfolio section */
     padding: 50px 0; /* Add some padding for spacing */
 }
@@ -704,6 +668,7 @@ nav.navbar {
 
     .navbar {
         padding: 0.5rem 1rem;
+        
     }
 
     .navbar-logo {
@@ -719,6 +684,7 @@ nav.navbar {
 
     .social-links-container {
         position: fixed;
+        justify-content: flex-end;
         top: 10px;
         right: 10px;
         background-color: black;
@@ -729,6 +695,7 @@ nav.navbar {
 
     .social-links {
         display: flex;
+        list-style: none;
         flex-direction: row;
         gap: 10px;
         list-style: none;
@@ -803,18 +770,25 @@ nav.navbar {
     
     .social-links-container {
         position: sticky;
-        top: 40px;
+        top: 45px;
         margin-top: -50px;
         right: 10px;
-        padding: 15px 30px 0px 0px;
+        padding: 0px 30px 0px 0px;
         border-radius: 0px;
         z-index: 990;
         display: flex;
         justify-content: flex-end;
-        background-color:  #736C66;
+    /*    background-color:  #736C66;*/
+        background-color: transparent; 
     }
 
-    #portfolio #index .navbar-brand {
+    #portfolio #index
+    .navbar-brand {
+        font-size: 2rem;
+    }
+
+    #price #contact #about
+    .navbar-brand {
         font-size: 2rem;
     }
 
@@ -822,13 +796,14 @@ nav.navbar {
         padding: -30px 0px 0px;
     }
 
-    #porfolio #index .horizontal-scroll-section, 
+    #porfolio #index #price #contact #about
+    .horizontal-scroll-section, 
     .horizontal-scroll-container {
         padding-top: 50px;
         margin-top: 50px;
     }
 
-    #portfolio .head-container {
+    #portfolio #index .head-container {
         background-color: #736C66; /* or match your navbar/bg */
     }
 
@@ -836,11 +811,11 @@ nav.navbar {
         height: 150px;
     }
 
-    #portfolio .card-title {
+    #portfolio #index .card-title {
         font-size: 1.2rem;
     }
 
-    #portfolio .card-text {
+    #portfolio #index .card-text {
         font-size: 0.9rem;
     }
 
@@ -855,14 +830,13 @@ nav.navbar {
         padding-bottom: 100px;
     }
 
-    
-
     /* mobile social icons size*/
     .social-icon {
         width: 50px;  
         height: 50px; 
     }
-    #portfolio .btn-primary {
+
+    #portfolio #index #price .btn-primary {
         font-size: 0.9rem;
         padding: 8px 16px;
     }
@@ -894,6 +868,15 @@ nav.navbar {
         font-size: 3rem;
     }
 
+    #price .fade-in-on-scroll {
+       position: relative;
+       left: -100px;
+       margin-left: -350px;
+       padding: -400px;
+       margin-bottom: 200px;
+       font-size: .5rem;
+    }
+
     #price .middle-section {
         background-color: #D9D5D2;
 
@@ -904,6 +887,24 @@ nav.navbar {
         font-size: 2rem;
     }
 
+#price .custom-bullet-list,
+#price .sublist {
+    font-size: 1rem;
+    padding-left: 20px;
+    word-break: break-word;
+    text-wrap: pretty;;
+
+}
+
+#price .custom-bullet-list li,
+#price .sublist li {
+    font-size: 2rem;
+    line-height: 1.5;
+    text-wrap: pretty;;
+    margin-bottom: 10px;
+}
+
+    
     #price .p-section {
         font-size: 1.5rem;
         padding-bottom: 50px; /* ← large bottom padding */
@@ -941,8 +942,6 @@ nav.navbar {
     .fade-in-on-scroll {
         position: relative;
         top: 200px;
-        opacity: 1 !important;
-        transform: none !important;
         padding-bottom: 300px;
         margin-top: 100px;
     }
@@ -963,22 +962,12 @@ nav.navbar {
         margin-top: 100px;
     }
 
-    .pricing-list,
-    .custom-bullet-list {
-        font-size: 1.2rem;
-
-    }
-
-    #price .custom-bullet-list .sublist li {
-        font-size: 1rem;
-    }
-
-        .pricing-list, 
+    .pricing-list, 
     .custom-bullet-list, 
     .bottom-section, 
     .a-section {
         width: 100%;
-        max-width: 100%;
+        max-width: 400px;
         padding: 0 16px;
         box-sizing: border-box;
     }
@@ -997,10 +986,21 @@ nav.navbar {
         font-size: 1.5rem;
     }
 
+    #contact .h1-subsection {
+        margin-bottom: 100px;
+    }
+
+    #contact .container {
+        padding-top: 50px;
+    }
+
+
+
     #contact .mb-3,
     #contact .mb-4 {
         max-width: 90%;
     }
+
 
     #about .p-section {
         margin: 20px auto 5px;
@@ -1018,3 +1018,41 @@ nav.navbar {
         margin-bottom: -50px;
     }
 }
+
+/*  @media (max-width: 991px) {
+    .navbar {
+        align-items: center; 
+    }
+    .container-fluid {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .navbar-brand-container {
+        margin-bottom: 10px;
+        margin-right: 0;
+    }
+
+    .social-links-container {
+        display: flex;
+        justify-content: flex-end;
+        align-items: left;
+        margin-top: 0px; 
+        padding: 10px 20px 0; 
+        background-color: transparent; 
+    }
+
+    .social-links {
+        display: flex;
+        gap: 20px;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .navbar-nav {
+        margin-right: 0; 
+        margin-left: auto;
+        align-items: center;
+    }
+} */
