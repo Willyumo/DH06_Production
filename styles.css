@@ -70,6 +70,8 @@
     margin-bottom: -100px; /* Adjust to create space below the navbar */
 }
 
+
+
 .strip {
     width: 80px; /* Adjust the width of each strip */
     height: 60%;
@@ -710,8 +712,12 @@ nav.navbar {
 
     .horizontal-scroll-section {
         height: 100%;
-        overflow-x: scroll;
+        overflow-x: auto;
+        overflow-y: hidden;
+        -webkit-overflow-scrolling: touch; /* for iOS momentum scroll */
         margin-top: -60px;
+        scroll-behavior: smooth;
+
     }
 
     .horizontal-scroll-container {
@@ -719,24 +725,54 @@ nav.navbar {
         flex-wrap: nowrap;
         position: relative;
         height: 500px;
-        width: max-content;
-        overflow-x: auto;
+        width: 100%;
         margin-bottom: 100px;
         margin-top: -60px;
+    }
+
+    
+    .horizontal-scroll-section::-webkit-scrollbar {
+    display: none; /* for Chrome/Safari */
+    }
+
+    .strip {
+        width: 100px;
+        height: 500px;
+        flex-shrink: 0; /* 🔑 Prevents shrinking when container overflows */
 
     }
 
-    .strip,
     .strip-portrait {
-        width: 200px;
+        width: 100px;
         height: 500px;
+        flex-shrink: 0; /* 🔑 Prevents shrinking when container overflows */
+
     }
 
-    .strip:hover,
-    .strip-portrait:hover {
-        width: 4000px;
+    .strip:hover{
+        width: 100%;
         height: 500px;
+        background-size: contain; /* keeps whole image visible */
+        background-repeat: no-repeat;
+        background-position: center;
+        flex: 0 0 auto;
+        transform: scale(1.2); /* 80% of original size */
+        transform-origin: center; /* ensures it scales from center */
+        margin-top: 30%;
     }
+
+    .strip-portrait:hover {
+        width: 100%;
+        height: 500px;
+        background-size: contain; /* keeps whole image visible */
+        background-repeat: no-repeat;
+        background-position: center;
+        flex: 0 0 auto;
+        transform: scale(0.8); /* 80% of original size */
+        transform-origin: center; /* ensures it scales from center */
+        margin-top:30%;
+    }
+
 
     .h1-image-title {
         position: absolute;
