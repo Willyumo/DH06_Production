@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Project 1</title>
+        
+        <!-- Link to CSS -->
+        <link rel="stylesheet" href="../styles.css">
+
+        <!-- jQuery (Ensure this loads first) -->
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+        <!-- Link to Your JavaScript File (Defer Ensures It Loads After HTML) -->
+        <script defer src="../script.js"></script>
+        </head>
+    
+        <!--Body Section-->
+    <body class="project-page">
+
+        <!-- Top Section -->
+        <div class ="top-section">
+            <div class="h1-section">
+                <h1 class="text-center">Pennsylvania Countryside Trip</h1>
+            </div>
+                <div class="p-section">
+                    <p> <p>
+                    <p> </p>
+                </div>
+        </div>
+
+        <!-- Scrollable Image Section -->
+        <div class="scroll-container">
+            <div class="middle-section">
+                <div class="fade-in-on-scroll">
+                    <div class="picture-section img">
+
+                        <div class="image-container">
+                            <h1 class="h1-image-title">Park</h1>
+                           <img src="../Images/Project11_Images/1980_Set_Piece_1.JPG" class="fade-in-on-scroll" alt="JJ Grad Photo">
+                        </div>
+                        <div class="image-container">
+                            <img src="../Images/Project11_Images/1980_Set_Piece_2.JPG" class="fade-in-on-scroll" alt="JJ Solo Grad">
+                        </div>
+                        <div class="image-container">
+                            <img src="../Images/Project11_Images/Bench_Silhouette_1.JPG" class="fade-in-on-scroll" alt="JJ Solo Greene">
+                        </div>
+                        <div class="image-container">
+                            <img src="../Images/Project11_Images/Bench_Silhouette_2.JPG" class="fade-in-on-scroll" alt="JJ Group Building Grad">
+                        </div>
+                        <div class="image-container">
+                            <img src="../Images/Project11_Images/Grass Frame_1.JPG" class="fade-in-on-scroll" alt="JJ Solo Grad">
+                        </div>
+                        <div class="image-container">
+                            <img src="../Images/Project11_Images/Grass_Frame_2.JPG" class="fade-in-on-scroll" alt="JJ Solo Grad">
+                        </div>
+                        <div class="image-container">
+                            <img src="../Images/Project11_Images/Walk_Path_People_2.JPG" class="fade-in-on-scroll" alt="JJ Solo Greene">
+                        </div>
+                        <div class="image-container">
+                            <img src="../Images/Project11_Images/Walk_Path_People_4.JPG" class="fade-in-on-scroll" alt="JJ Group Building Grad">
+                        </div>
+                        <div class="image-container">
+                            <img src="../Images/Project11_Images/Rock_Waterfall_1.JPG" class="fade-in-on-scroll" alt="JJ Solo Grad">
+                        </div>
+                        <div class="image-container">
+                            <img src="../Images/Project11_Images/Rock_Waterfall_2.JPG" class="fade-in-on-scroll" alt="JJ Solo Greene">
+                        </div>
+                        <div class="image-container">
+                            <img src="../Images/Project11_Images/Downtown_Path.JPG" class="fade-in-on-scroll" alt="JJ Solo Greene">
+                        </div>
+                        <div class="image-container">
+                            <img src="../Images/Project11_Images/Brooke_Sign_1.JPG" class="fade-in-on-scroll" alt="JJ Solo Greene">
+                        </div>
+                        <div class="image-container">
+                            <img src="../Images/Project11_Images/Brooke_Sign_2.JPG" class="fade-in-on-scroll" alt="JJ Group Building Grad">
+                        </div>
+                        <div class="image-container">
+                            <img src="../Images/Project11_Images/Sign_Summer_1.JPG" class="fade-in-on-scroll" alt="JJ Solo Grad">
+                        </div>
+                        <div class="image-container">
+                            <img src="../Images/Project11_Images/Sign_Summer_2.JPG" class="fade-in-on-scroll" alt="JJ Solo Greene">
+                        </div>
+                        <div class="image-container">
+                            <img src="../Images/Project11_Images/Closeup_Path_1.JPG" class="fade-in-on-scroll" alt="JJ Solo Greene">
+                        </div>
+                        <div class="image-container">
+                            <img src="../Images/Project11_Images/Closeup_Path_2.JPG" class="fade-in-on-scroll" alt="JJ Group Building Grad">
+                        </div>
+
+                        <div class="image-container">
+                            <h1 class="h1-image-title">Hillside</h1>
+                            <img src="../Images/Project11_Images/Field_Hill_2.JPG" class="fade-in-on-scroll" alt="JJ Group Building Grad">
+                        </div>
+                        <div class="image-container">
+                            <img src="../Images/Project11_Images/Field_Hill_4.JPG" class="fade-in-on-scroll" alt="JJ Solo Grad">
+                        </div>
+                        <div class="image-container">
+                            <img src="../Images/Project11_Images/Mirror_Road_1.JPG" class="fade-in-on-scroll" alt="JJ Solo Greene">
+                        </div>
+                        <div class="image-container">
+                            <img src="../Images/Project11_Images/Mirror_Road_2.JPG" class="fade-in-on-scroll" alt="JJ Group Building Grad">
+                        </div>
+                        <div class="image-container">
+                            <img src="../Images/Project11_Images/Tree_Tops_2.JPG" class="fade-in-on-scroll" alt="JJ Group Building Grad">
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Back to Portfolio Button -->
+        <div class="text-center">
+            <div class="bottom-section">
+                <div class="a-section">
+                    <a href="../portfolio.html" class="btn">Back to Portfolio</a>
+                </div>
+            </div>
+        </div>
+
+    </body>
+</html>
+        <!-- JavaScript code -->
+        <script>
+            window.addEventListener('scroll', function() {
+                var images = document.querySelectorAll('.fade-in-on-scroll');
+        
+                images.forEach(function(image) {
+                    var imageTop = image.getBoundingClientRect().top;
+                    var windowHeight = window.innerHeight;
+        
+                    if (imageTop <= windowHeight) {
+                        image.classList.add('visible');
+                    } else {
+                        image.classList.remove('visible');
+                        image.classList.add('fade-out');
+                    }
+                });
+            });
+        </script>
