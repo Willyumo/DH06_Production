@@ -25,6 +25,16 @@ document.addEventListener("click", (e) => {
   setTimeout(() => (btn.textContent = "Add to cart"), 1500);
 });
 
+// Returns true if added, false if the cart is full.
+// price is for display only; the Worker uses its own prices.
+function addSet(set, label, price, photos) {
+  const cart = getCart();
+  if (cart.length >= MAX_SETS) return false;
+  cart.push({ set, label, price, photos: [...photos] });
+  saveCart(cart);
+  return true;
+}
+
 // Used by cart.html
 function renderCart() {
   const list = document.getElementById("cart-items");
