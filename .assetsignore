@@ -1,0 +1,9 @@
+worker
+wrangler.jsonc
+.assetsignore
+.gitignore
+composer.json
+composer.lock
+vendor
+config.php
+*.md

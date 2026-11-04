@@ -36,6 +36,8 @@ function setSessionDetails(session) {
       statusText = "Payment succeeded";
       iconColor = "#30B130";
       icon = SuccessIcon;
+      try { localStorage.removeItem("cart"); } catch {}
+      break;
       break;
     case "open":
       statusText = "Payment failed";
@@ -75,7 +77,7 @@ async function initialize() {
     setErrorState();
     return;
   }
-  const response = await fetch(`/session-status?session_id=${sessionId}`);
+  const response = await fetch(`/api/session-status?session_id=${encodeURIComponent(sessionId)}`);  
   const session = await response.json();
 
   setSessionDetails(session);

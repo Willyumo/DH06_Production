@@ -20,9 +20,13 @@ document
 
 // Fetches a Checkout Session and captures the client secret
 async function initialize() {
-  const promise = fetch("/create-checkout-session", {
+  const cart = getCart().map(({ set, photos }) => ({ set, photos }));
+  if (!cart.length) { window.location = "cart.html"; return; }
+
+  const promise = fetch("/api/create-checkout", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ items: cart }),
   })
     .then((r) => r.json())
     .then((r) => r.clientSecret);
@@ -49,7 +53,6 @@ async function initialize() {
   }
 
   emailInput.addEventListener("input", () => {
-    // Clear any validation errors
     emailErrors.textContent = "";
     emailInput.classList.remove("error");
   });
