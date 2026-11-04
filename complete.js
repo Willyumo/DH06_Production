@@ -31,31 +31,31 @@ function setSessionDetails(session) {
     return;
   }
 
-  switch (session.status) {
-    case "complete":
-      statusText = "Payment succeeded";
-      iconColor = "#30B130";
-      icon = SuccessIcon;
-      try { localStorage.removeItem("cart"); } catch {}
-      break;
-      break;
-    case "open":
-      statusText = "Payment failed";
-      iconColor = "#DF1B41";
-      icon = ErrorIcon;
-      break;
-    default:
-      break;
+  const paid = session.status === "complete" && session.payment_status === "paid";
+
+  if (paid) {
+    statusText = "Payment succeeded. Thank you!";
+    iconColor = "#30B130";
+    icon = SuccessIcon;
+    try { localStorage.removeItem("cart"); } catch {}
+  } else if (session.status === "complete") {
+    statusText = "Your payment is processing. Your cart is still saved.";
+    iconColor = "#6A7383";
+    icon = InfoIcon;
+  } else if (session.status === "open") {
+    statusText = "Payment wasn't completed. Your cart is still saved.";
   }
 
   document.querySelector("#status-icon").style.backgroundColor = iconColor;
   document.querySelector("#status-icon").innerHTML = icon;
-  document.querySelector("#status-text").textContent= statusText;
+  document.querySelector("#status-text").textContent = statusText;
   document.querySelector("#intent-status").textContent = session.status;
-  document.querySelector("#intent-id").textContent = session.payment_intent_id;
+  document.querySelector("#intent-id").textContent = session.payment_intent_id || "";
   document.querySelector("#session-status").textContent = session.payment_status;
-  document.querySelector("#payment-intent-status").textContent = session.payment_intent_status;
-  document.querySelector("#view-details").href = `https://dashboard.stripe.com/payments/${session.payment_intent_id}`;
+  document.querySelector("#payment-intent-status").textContent = session.payment_intent_status || "";
+
+  // Dashboard link is for you, not customers
+  document.querySelector("#view-details").classList.add("hidden");
 }
 
 function setErrorState() {
@@ -77,8 +77,14 @@ async function initialize() {
     setErrorState();
     return;
   }
-  const response = await fetch(`/api/session-status?session_id=${encodeURIComponent(sessionId)}`);  
-  const session = await response.json();
+
+  let session = null;
+  try {
+    const response = await fetch(`/api/session-status?session_id=${encodeURIComponent(sessionId)}`);
+    session = await response.json();
+  } catch (e) {
+    console.error(e);
+  }
 
   setSessionDetails(session);
 }
