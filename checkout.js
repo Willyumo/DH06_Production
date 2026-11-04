@@ -20,6 +20,9 @@ document
 
 // Fetches a Checkout Session and captures the client secret
 async function initialize() {
+  const submitBtn = document.querySelector("#submit");
+  submitBtn.disabled = true; // enabled once Stripe is ready
+
   const cart = getCart().map(({ set, photos }) => ({ set, photos }));
   if (!cart.length) { window.location = "cart.html"; return; }
 
@@ -29,49 +32,47 @@ async function initialize() {
     body: JSON.stringify({ items: cart }),
   })
     .then((r) => r.json())
-    .then((r) => r.clientSecret);
+    .then((r) => {
+      if (!r.clientSecret) throw new Error(r.error || "Could not start checkout");
+      return r.clientSecret;
+    });
 
-  const appearance = {
-    theme: 'stripe',
-  };
   checkout = stripe.initCheckout({
     clientSecret: promise,
-    elementsOptions: { appearance },
+    elementsOptions: { appearance: { theme: "stripe" } },
   });
 
-  checkout.on('change', (session) => {
-    // Handle changes to the checkout session
-  });
-
-  const loadActionsResult = await checkout.loadActions();
-  if (loadActionsResult.type === 'success') {
-    actions = loadActionsResult.actions;
-    const session = loadActionsResult.actions.getSession();
-    document.querySelector("#button-text").textContent = `Pay ${
-      session.total.total.amount
-    } now`;
+  let result;
+  try {
+    result = await checkout.loadActions();
+  } catch (e) {
+    showMessage(e.message || "Could not start checkout. Please try again.", true);
+    return;
   }
+  if (result.type !== "success") {
+    showMessage("Could not start checkout. Please try again.", true);
+    return;
+  }
+
+  actions = result.actions;
+  const session = actions.getSession();
+  document.querySelector("#button-text").textContent = `Pay ${session.total.total.amount} now`;
 
   emailInput.addEventListener("input", () => {
     emailErrors.textContent = "";
     emailInput.classList.remove("error");
   });
-
   emailInput.addEventListener("blur", async () => {
-    const newEmail = emailInput.value;
-    if (!newEmail) {
-      return;
-    }
-
-    const { isValid, message } = await validateEmail(newEmail);
+    if (!emailInput.value) return;
+    const { isValid, message } = await validateEmail(emailInput.value);
     if (!isValid) {
       emailInput.classList.add("error");
       emailErrors.textContent = message;
     }
   });
 
-  const paymentElement = checkout.createPaymentElement();
-  paymentElement.mount("#payment-element");
+  checkout.createPaymentElement().mount("#payment-element");
+  submitBtn.disabled = false;
 }
 
 async function handleSubmit(e) {
@@ -84,8 +85,9 @@ async function handleSubmit(e) {
     emailInput.classList.add("error");
     emailErrors.textContent = message;
     showMessage(message);
-    setLoading(false);
-    return;
+  const result = await actions.confirm();
+  if (result.error) showMessage(result.error.message);
+  setLoading(false);
   }
 
   const { error } = await actions.confirm();
@@ -102,16 +104,14 @@ async function handleSubmit(e) {
 
 // ------- UI helpers -------
 
-function showMessage(messageText) {
-  const messageContainer = document.querySelector("#payment-message");
-
-  messageContainer.classList.remove("hidden");
-  messageContainer.textContent = messageText;
-
-  setTimeout(function () {
-    messageContainer.classList.add("hidden");
-    messageContainer.textContent = "";
-  }, 4000);
+function showMessage(messageText, persist = false) {
+  const el = document.querySelector("#payment-message");
+  el.classList.remove("hidden");
+  el.textContent = messageText;
+  if (persist) return;
+  setTimeout(
+    () => { el.classList.add("hidden"); el.textContent = ""; }, 4000
+  );
 }
 
 // Show a spinner on payment submission
