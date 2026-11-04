@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DH06 Production | Order prints</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  <style>
+    .photo-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: .5rem; }
+    .photo { padding: 0; border: 3px solid transparent; background: none; cursor: pointer; }
+    .photo img { width: 100%; aspect-ratio: 1; object-fit: cover; display: block; }
+    .photo[aria-pressed="true"] { border-color: #0d6efd; }
+    .photo:focus-visible { outline: 3px dashed currentColor; outline-offset: 2px; }
+    .order-bar { position: sticky; top: 0; z-index: 5; padding: .75rem 0; background: Canvas; color: CanvasText; }
+  </style>
+</head>
+<body>
+  <main class="container py-4">
+    <p><a href="portfolio.html">Back to portfolio</a> | <a href="cart.html">View cart</a></p>
+    <h1>Order prints</h1>
+    <div class="order-bar">
+      <label for="set" class="form-label">Choose a set</label>
+      <select id="set" class="form-select mb-2"></select>
+      <p id="status" aria-live="polite" class="mb-2"></p>
+      <button id="add" class="btn btn-primary" disabled>Add set to cart</button>
+    </div>
+    <div id="grid" class="photo-grid"></div>
+  </main>
+  <script src="cart.js"></script>
+  <script src="shop.js"></script>
+</body>
+</html>
